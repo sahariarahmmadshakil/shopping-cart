@@ -1,4 +1,5 @@
 function updateProductNumber(product, isIncreasing, price, prices) {
+
     const ProductInput = document.getElementById(product);
     let productNumber = ProductInput.value;
     if (isIncreasing == true) {
@@ -11,7 +12,20 @@ function updateProductNumber(product, isIncreasing, price, prices) {
     const productTotal = document.getElementById(
         prices);
     productTotal.innerText = productNumber * price;
-    // update total price cart
+    calculateTotal()
+
+}
+// update total price cart
+function calculateTotal() {
+    const phoneInput = document.getElementById('phone-number');
+    let phoneNumber = parseInt(phoneInput.value);
+
+    const caseInput = document.getElementById('case-number');
+    let caseNumber = parseInt(caseInput.value);
+    const subTotal = document.getElementById('sub-total');
+    const phoneTotal = (phoneNumber * 1219) + (caseNumber * 59);
+    subTotal.innerText = phoneTotal;
+
 
 }
 
